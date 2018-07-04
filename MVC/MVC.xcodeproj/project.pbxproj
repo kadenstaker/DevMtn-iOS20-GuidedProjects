@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		84C6724B20ED294900275108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6724A20ED294900275108 /* AppDelegate.swift */; };
-		84C6724D20ED294900275108 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6724C20ED294900275108 /* ViewController.swift */; };
 		84C6725020ED294900275108 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6724E20ED294900275108 /* Main.storyboard */; };
 		84C6725220ED294B00275108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C6725120ED294B00275108 /* Assets.xcassets */; };
 		84C6725520ED294B00275108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6725320ED294B00275108 /* LaunchScreen.storyboard */; };
+		84C6725E20ED2E5400275108 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6725D20ED2E5400275108 /* SongTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84C6724720ED294900275108 /* MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C6724A20ED294900275108 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C6724C20ED294900275108 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84C6724F20ED294900275108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C6725120ED294B00275108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C6725420ED294B00275108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C6725620ED294B00275108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C6725D20ED2E5400275108 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,21 @@
 			isa = PBXGroup;
 			children = (
 				84C6724A20ED294900275108 /* AppDelegate.swift */,
-				84C6724C20ED294900275108 /* ViewController.swift */,
 				84C6724E20ED294900275108 /* Main.storyboard */,
+				84C6725C20ED2D6E00275108 /* Resources */,
+				84C6725D20ED2E5400275108 /* SongTableViewController.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		84C6725C20ED2D6E00275108 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				84C6725120ED294B00275108 /* Assets.xcassets */,
 				84C6725320ED294B00275108 /* LaunchScreen.storyboard */,
 				84C6725620ED294B00275108 /* Info.plist */,
 			);
-			path = MVC;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C6724D20ED294900275108 /* ViewController.swift in Sources */,
+				84C6725E20ED2E5400275108 /* SongTableViewController.swift in Sources */,
 				84C6724B20ED294900275108 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +290,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9HL3TFS6J;
-				INFOPLIST_FILE = MVC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MVC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9HL3TFS6J;
-				INFOPLIST_FILE = MVC/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MVC/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
