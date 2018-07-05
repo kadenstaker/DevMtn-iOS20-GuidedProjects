@@ -55,6 +55,8 @@ class PlaylistTableViewController: UITableViewController {
             return
         }
         
+        playlistTextField.text = ""
+        
         PlaylistController.createPlaylist(name: playlist)
         tableView.reloadData()
     }
