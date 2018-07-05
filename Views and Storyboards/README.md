@@ -2,7 +2,7 @@
 
 [< Back](https://github.com/Camji55/DevMtn-iOS20/)
 
-Shows basic view modification as well as basic segues.
+- Shows basic view modification as well as basic segues.
 
 ##### Cameron Ingham
 ###### Salt Lake City - iOS Immersive - July 2nd
