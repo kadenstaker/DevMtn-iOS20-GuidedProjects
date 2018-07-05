@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Song: Equatable {
+class Song: Equatable, Codable {
     let name: String
     var artist: String
     

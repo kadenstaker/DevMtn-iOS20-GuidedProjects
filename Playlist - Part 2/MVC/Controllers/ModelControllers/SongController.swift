@@ -12,6 +12,7 @@ class SongController {
     static func createSong(name: String, artist: String, playlist: Playlist){
         let newSong = Song(name: name, artist: artist)
         playlist.songs.append(newSong)
+        PlaylistController.shared.savePlaylists()
     }
     
     static func deleteSong(song: Song, playlist: Playlist){
@@ -19,5 +20,7 @@ class SongController {
             return
         }
         playlist.songs.remove(at: songIndex)
+        PlaylistController.shared.savePlaylists()
     }
+    
 }

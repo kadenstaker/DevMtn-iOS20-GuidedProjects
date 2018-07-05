@@ -33,7 +33,8 @@ class SongTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete) {
-            playlist.songs.remove(at: indexPath.row)
+            let song = playlist.songs[indexPath.row]
+            SongController.deleteSong(song: song, playlist: playlist)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         tableView.reloadData()
@@ -44,7 +45,10 @@ class SongTableViewController: UITableViewController {
             return
         }
         
-        playlist.songs.append(Song(name: song, artist: artist))
+        songTextField.text = ""
+        artistTextField.text = ""
+        
+        SongController.createSong(name: song, artist: artist, playlist: playlist)
         tableView.reloadData()
     }
 }

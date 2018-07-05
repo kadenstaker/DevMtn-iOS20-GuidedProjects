@@ -18,6 +18,7 @@ class PlaylistTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        PlaylistController.shared.loadPlaylists()
         tableView.reloadData()
     }
     
@@ -55,7 +56,9 @@ class PlaylistTableViewController: UITableViewController {
             return
         }
         
-        PlaylistController.createPlaylist(name: playlist)
+        playlistTextField.text = ""
+        
+        PlaylistController.shared.createPlaylist(name: playlist)
         tableView.reloadData()
     }
     
