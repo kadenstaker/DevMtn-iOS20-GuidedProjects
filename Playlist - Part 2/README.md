@@ -1,4 +1,4 @@
-# DevMountain Guided Projects 4 - Playlist Model, View, Controller (MVC) - Part 2
+# DevMountain Guided Project 4 - Playlist Model, View, Controller (MVC) - Part 2
 
 [< Back](https://github.com/Camji55/DevMtn-iOS20/)
 

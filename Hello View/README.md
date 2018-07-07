@@ -1,4 +1,4 @@
-# DevMountain Guided Projects 1 - Views and Storyboards
+# DevMountain Guided Project 1 - Views and Storyboards
 
 [< Back](https://github.com/Camji55/DevMtn-iOS20/)
 
