@@ -38,20 +38,15 @@ class FriendsTableViewController: UITableViewController {
             FriendController.shared.saveFriends()
         }
     }
-
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? FriendDetailViewController else{
             return
         }
-        if(segue.identifier == "ToAddFriend"){
-            destinationVC.segueIdentifier = "ToAddFriend"
-        } else {
-            guard let indexPath = tableView.indexPathForSelectedRow else {
-                return
+        if(segue.identifier == "ToFriendDetail"){
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.friend = FriendController.shared.friends[indexPath.row]
             }
-            destinationVC.segueIdentifier = "ToFriendDetail"
-            destinationVC.friend = FriendController.shared.friends[indexPath.row]
         }
     }
 }
