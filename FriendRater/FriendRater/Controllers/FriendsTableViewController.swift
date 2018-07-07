@@ -48,5 +48,8 @@ class FriendsTableViewController: UITableViewController {
                 destinationVC.friend = FriendController.shared.friends[indexPath.row]
             }
         }
+        else {
+            destinationVC.
+        }
     }
 }

@@ -18,21 +18,12 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friendTextField.delegate = self
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.shouldPop))
-        friendTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
-        if(friend != nil){
-            title = friend?.name
-        }
-        else{
-            title = "Add Friend"
-        }
+        setupViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateViews()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -41,11 +32,6 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
             return
         }
         self.title = friendName
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
     
     @objc func shouldPop(){
@@ -70,13 +56,8 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
                 
                 present(alert, animated: true, completion:nil)
             }
-            else {
-                self.navigationController?.popViewController(animated: true)
-            }
         }
-        else {
-            self.navigationController?.popViewController(animated: true)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
 
     
@@ -101,6 +82,20 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
             FriendController.shared.saveFriends()
             self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    func setupViews(){
+        friendTextField.delegate = self
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.shouldPop))
+        friendTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        if(friend != nil){
+            title = friend?.name
+        }
+        else{
+            title = "Add Friend"
+        }
+        updateViews()
     }
     
     func updateViews(){
