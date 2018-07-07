@@ -9,7 +9,7 @@
 import Foundation
 
 class Friend: Equatable, Codable {
-    let name: String
+    var name: String
     var rating: Int
     
     init(name: String, rating: Int){

@@ -28,12 +28,15 @@ class FriendController {
         saveFriends()
     }
     
+    func updateFriend(friend: Friend, name: String, rating: Int) {
+        friend.name = name
+        friend.rating = rating
+        saveFriends()
+    }
+    
     private func fileURL() -> URL{
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentDirectory = path[0]
-        let fileName = "friends.json"
-        let fullURL = documentDirectory.appendingPathComponent(fileName)
-        return fullURL
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        return documentDirectory.appendingPathComponent("friends.json")
     }
     
     func saveFriends(){

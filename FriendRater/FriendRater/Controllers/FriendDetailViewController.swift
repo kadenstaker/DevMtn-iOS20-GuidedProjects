@@ -74,12 +74,7 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.popViewController(animated: true)
         }
         else {
-            let updatedFriend = Friend(name: friendName, rating: Int(self.ratingSlider.value))
-            guard let friendIndex = FriendController.shared.friends.index(of: friend!) else{
-                return
-            }
-            FriendController.shared.friends[friendIndex] = updatedFriend
-            FriendController.shared.saveFriends()
+            FriendController.shared.updateFriend(friend: friend!, name: friendName, rating: Int(ratingSlider.value))
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -99,7 +94,7 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateViews(){
-        if let friendName = friend?.name, let ratingLabel = friend?.rating{
+        if let friendName = friend?.name, let ratingLabel = friend?.rating {
             self.friendTextField.text = friendName
             self.ratingLabel.text = "Rating: \(ratingLabel)"
             self.ratingSlider.value = Float(ratingLabel)
