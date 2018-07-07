@@ -20,6 +20,8 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         friendTextField.delegate = self
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.shouldPop))
         friendTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         if(segueIdentifier == "ToFriendDetail"){
             title = friend.name
@@ -39,7 +41,7 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let friendName = textField.text, friendName != "", !friendName.isEmpty else{
+        guard let friendName = textField.text, !friendName.trimmingCharacters(in: .whitespaces).isEmpty else{
             self.title = "Add Friend"
             return
         }
@@ -51,20 +53,47 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @objc func shouldPop(){
+        guard let friendName = friendTextField.text, !friendName.isEmpty else{
+            return
+        }
+        let updatedFriend = Friend(name: friendName.trimmingCharacters(in: .whitespaces), rating: Int(self.ratingSlider.value))
+        guard let friendIndex = FriendController.shared.friends.index(of: friend) else{
+            return
+        }
+        
+        if(FriendController.shared.friends[friendIndex] != updatedFriend){
+            let alert = UIAlertController(title: "Cancel Changes?", message: "Are you sure you want to cancel the changes you made?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive) { (alert: UIAlertAction!) -> Void in
+                self.navigationController?.popViewController(animated: true)
+            }
+            let NoAction = UIAlertAction(title: "No", style: .default)
+            
+            alert.addAction(yesAction)
+            alert.addAction(NoAction)
+            
+            present(alert, animated: true, completion:nil)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    
     @IBAction func sliderDidChange(_ sender: UISlider) {
         ratingLabel.text = "Rating: \(Int(sender.value))"
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        guard let friendName = friendTextField.text, friendName != "", !friendName.isEmpty else{
+        guard let friendName = friendTextField.text, !friendName.isEmpty else{
             return
         }
         if(segueIdentifier == "ToAddFriend"){
-            FriendController.shared.createFriend(name: friendName, rating: Int(ratingSlider.value))
+            FriendController.shared.createFriend(name: friendName.trimmingCharacters(in: .whitespaces), rating: Int(ratingSlider.value))
             self.navigationController?.popViewController(animated: true)
         }
         else if(segueIdentifier == "ToFriendDetail"){
-            let updatedFriend = Friend(name: friendName, rating: Int(self.ratingSlider.value))
+            let updatedFriend = Friend(name: friendName.trimmingCharacters(in: .whitespaces), rating: Int(self.ratingSlider.value))
             guard let friendIndex = FriendController.shared.friends.index(of: friend) else{
                 return
             }
@@ -73,5 +102,5 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
+
 }

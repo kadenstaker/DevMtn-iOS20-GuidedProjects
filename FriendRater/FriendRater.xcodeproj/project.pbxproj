@@ -17,7 +17,7 @@
 		841536C920F1249900F5232A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841536C820F1249900F5232A /* FriendsTableViewController.swift */; };
 		841536CE20F1255200F5232A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841536CD20F1255200F5232A /* Friend.swift */; };
 		841536D020F1258600F5232A /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841536CF20F1258600F5232A /* FriendController.swift */; };
-		841536D220F125A500F5232A /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841536D120F125A500F5232A /* FriendDetailViewController.swift */; };
+		841536D220F125A500F5232A /* B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841536D120F125A500F5232A /* B.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		841536C820F1249900F5232A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		841536CD20F1255200F5232A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		841536CF20F1258600F5232A /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
-		841536D120F125A500F5232A /* FriendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
+		841536D120F125A500F5232A /* B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				841536C820F1249900F5232A /* FriendsTableViewController.swift */,
-				841536D120F125A500F5232A /* FriendDetailViewController.swift */,
+				841536D120F125A500F5232A /* B.swift */,
 				841536CF20F1258600F5232A /* FriendController.swift */,
 			);
 			path = Controllers;
@@ -303,7 +303,7 @@
 			files = (
 				8415369620F11EAB00F5232A /* AppDelegate.swift in Sources */,
 				8415369E20F11EAB00F5232A /* FriendRater.xcdatamodeld in Sources */,
-				841536D220F125A500F5232A /* FriendDetailViewController.swift in Sources */,
+				841536D220F125A500F5232A /* B.swift in Sources */,
 				841536D020F1258600F5232A /* FriendController.swift in Sources */,
 				841536C920F1249900F5232A /* FriendsTableViewController.swift in Sources */,
 				841536CE20F1255200F5232A /* Friend.swift in Sources */,
