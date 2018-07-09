@@ -1,4 +1,4 @@
-# DevMountain Guided Project 5 - Setting
+# DevMountain Guided Project 5 - Settings
 
 [< Back](https://github.com/Camji55/DevMtn-iOS20/)
 
