@@ -17,4 +17,5 @@ class Setting {
         self.image = image
         self.name = name
     }
+
 }

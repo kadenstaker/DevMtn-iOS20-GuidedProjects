@@ -8,24 +8,26 @@
 
 import UIKit
 
+protocol SettingTableViewCellDelegate: class {
+    func switchTapped(cell: SettingTableViewCell)
+}
+
 class SettingTableViewCell: UITableViewCell {
-    
+
     var setting: Setting? {
         didSet {
             updateViews()
         }
     }
+    
+    weak var delegate: SettingTableViewCellDelegate?
 
     @IBOutlet weak var settingImageView: UIImageView!
     @IBOutlet weak var settingName: UILabel!
     @IBOutlet weak var toggleSwitch: UISwitch!
     
     @IBAction func enabledSwitchedTapped(_ sender: Any) {
-        if(toggleSwitch.isOn){
-            self.backgroundColor = UIColor.lightGray
-        } else {
-            self.backgroundColor = UIColor.white
-        }
+        delegate?.switchTapped(cell: self)
     }
     
     func updateViews(){

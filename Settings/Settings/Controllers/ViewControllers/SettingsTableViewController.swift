@@ -20,7 +20,20 @@ class SettingsTableViewController: UITableViewController {
         }
         
         cell.setting = SettingController.shared.settings[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
+}
+
+extension SettingsTableViewController: SettingTableViewCellDelegate {
+    func switchTapped(cell: SettingTableViewCell) {
+        guard let setting = cell.setting else { return }
+        SettingController.shared.changeToggle(setting: setting)
+        if(cell.toggleSwitch.isOn){
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+    }
 }

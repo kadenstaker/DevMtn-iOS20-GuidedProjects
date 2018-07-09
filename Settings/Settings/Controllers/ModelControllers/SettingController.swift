@@ -9,6 +9,7 @@
 import UIKit
 
 class SettingController {
+    
     static let shared = SettingController()
     
     var settings: [Setting] {
@@ -17,6 +18,10 @@ class SettingController {
         let iBooks = Setting(name: "iBooks", image: UIImage(named: "ibooks")!)
 
         return [music, appStore, iBooks]
+    }
+    
+    func changeToggle(setting: Setting){
+        setting.enabled = !setting.enabled
     }
     
 }
