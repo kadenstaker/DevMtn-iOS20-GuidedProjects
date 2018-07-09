@@ -16,8 +16,8 @@ class FriendDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ratingSlider: UISlider!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupViews()
     }
     
