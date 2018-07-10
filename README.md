@@ -14,6 +14,8 @@ Weekend Guided Project 1: [Friend Rater](https://github.com/Camji55/DevMtn-iOS20
 
 Guided Project 5: [Settings](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/Settings)
 
+Guided Project 6: [Power Nap](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/Power%20Nap)
+
 
 ##### Cameron Ingham
 ###### Salt Lake City - iOS Immersive - July 2nd
