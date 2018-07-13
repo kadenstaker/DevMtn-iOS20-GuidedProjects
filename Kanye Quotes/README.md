@@ -1,4 +1,4 @@
-# DevMountain Climb Night Guided Project 1 - Kanye Quotes
+# DevMountain Climb Night Guided Project 2 - Kanye Quotes
 
 [< Back](https://github.com/Camji55/DevMtn-iOS20/)
 
