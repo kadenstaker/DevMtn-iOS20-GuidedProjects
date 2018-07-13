@@ -31,5 +31,6 @@ class PlaylistController {
 
     func deletePlaylist(_ playlist: Playlist){
         CoreDataManager.delete(object: playlist)
+        CoreDataManager.saveToPersistantStore()
     }
 }

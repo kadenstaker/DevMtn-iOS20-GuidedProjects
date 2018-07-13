@@ -16,6 +16,7 @@ class SongController {
     
     static func deleteSong(_ song: Song){
         CoreDataManager.delete(object: song)
+        CoreDataManager.saveToPersistantStore()
     }
     
 }
