@@ -28,6 +28,8 @@ Climb Night Guided Project 2: [Kanye Quotes](https://github.com/Camji55/DevMtn-i
 
 Weekend Guided Project 1: [Friend Rater](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/FriendRater)
 
+Weekend Guided Project 2: [Restaurant Rater](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/RestaurantRater)
+
 ##### Cameron Ingham
 ###### Salt Lake City - iOS Immersive - July 2nd
 
