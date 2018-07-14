@@ -30,6 +30,7 @@ class RestaurantListTableViewController: UITableViewController {
         let restaurant = RestaurantController.fetchedResultsController.object(at: indexPath)
         
         cell.restaurant = restaurant
+        cell.delegate = self
 
         return cell
     }
@@ -59,6 +60,12 @@ class RestaurantListTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+}
+
+extension RestaurantListTableViewController: RestaurantTableViewCellDelegate {
+    func toggleButton(restaurant: Restaurant) {
+        RestaurantController.toggleIsGood(restaurant: restaurant)
+    }
 }
 
 extension RestaurantListTableViewController: NSFetchedResultsControllerDelegate {

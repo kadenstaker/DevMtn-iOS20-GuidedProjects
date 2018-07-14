@@ -6,6 +6,10 @@
 //  Copyright © 2018 Cameron Ingham. All rights reserved.
 //
 
+protocol RestaurantTableViewCellDelegate: class {
+    func toggleButton(restaurant: Restaurant)
+}
+
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
@@ -15,13 +19,15 @@ class RestaurantTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    
+    weak var delegate: RestaurantTableViewCellDelegate?
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rateButton: UIButton!
 
     @IBAction func toggleButton(_ sender: Any) {
         guard let restaurant = restaurant else {return}
-        RestaurantController.toggleIsGood(restaurant: restaurant)
+        delegate?.toggleButton(restaurant: restaurant)
     }
     
     func updateViews(){
