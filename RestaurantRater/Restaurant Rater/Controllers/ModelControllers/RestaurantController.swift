@@ -19,17 +19,33 @@ class RestaurantController {
     
     static func create(name: String){
         let _ = Restaurant(name: name)
-        CoreDataStack.save()
+        save()
     }
     
     static func delete(restaurant: Restaurant){
         CoreDataStack.context.delete(restaurant)
-        CoreDataStack.save()
+        save()
     }
     
     static func toggleIsGood(restaurant: Restaurant){
         restaurant.isGood = !restaurant.isGood
-        CoreDataStack.save()
+        save()
+    }
+    
+    static func save(){
+        do {
+            try CoreDataStack.context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func load(){
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     

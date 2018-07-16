@@ -13,11 +13,7 @@ class RestaurantListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            try RestaurantController.fetchedResultsController.performFetch()
-        } catch {
-            print(error.localizedDescription)
-        }
+        RestaurantController.load()
         RestaurantController.fetchedResultsController.delegate = self
     }
 

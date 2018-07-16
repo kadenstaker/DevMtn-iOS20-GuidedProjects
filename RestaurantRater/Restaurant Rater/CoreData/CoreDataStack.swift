@@ -24,11 +24,4 @@ struct CoreDataStack {
     
     static var context: NSManagedObjectContext { return container.viewContext }
     
-    static func save(){
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
 }
