@@ -29,6 +29,8 @@
 
 - Guided Project 13: [iTunes Music Search](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/iTunes%20Search)
 
+- Guided Project 14: [Playlist - Objective C](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/Playlist%20-%20Objective%20C)
+
 #### Climb Night
 - Climb Night Guided Project 2: [Kanye Quotes](https://github.com/Camji55/DevMtn-iOS20-GuidedProjects/tree/master/Kanye%20Quotes)
 
