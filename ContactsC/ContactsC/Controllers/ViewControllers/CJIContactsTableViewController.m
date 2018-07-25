@@ -55,6 +55,7 @@
         
             CJIPerson *newPerson = [[CJIPerson alloc] initWithName:name phoneNumber:phoneNumber];
             [[CJIPersonController sharedController] addPerson:newPerson];
+            [newPerson release];
             [self.tableView reloadData];
     }];
     
