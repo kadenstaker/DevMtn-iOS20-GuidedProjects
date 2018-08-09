@@ -33,12 +33,11 @@ class UserController {
             let user = User(username: username, firstName: firstName, lastName: lastName, appleUser: appleUser)
             let userRecord = CKRecord(user: user)
             
-//            self.fetch(completion: { (success) in
-//                if success {
-//                    print("Account already exists for this user. Try logging in.")
-//                    completion(false)
-//                    return
-//                } else {
+            self.fetch(completion: { (success, error) in
+                if success {
+                    completion(false, "Account already exists for this user. Try logging in.")
+                    return
+                } else {
                     self.publicDB.save(userRecord, completionHandler: { (_, error) in
                         if let error = error {
                             completion(false, error.localizedDescription)
@@ -48,8 +47,8 @@ class UserController {
                         self.user = user
                         completion(true, nil)
                     })
-//                }
-//            })
+                }
+            })
         }
     }
     
